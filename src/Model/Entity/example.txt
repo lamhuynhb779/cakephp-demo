@@ -1,0 +1,23 @@
+<?php
+
+
+namespace App\Model\Entity;
+use Cake\Utility\Text;
+
+use Cake\ORM\Entity;
+
+class Customer extends Entity
+{
+    // Accessors & Mutators
+//    protected function _getTitle($title){
+//        return ucwords($title);
+//    }
+//    protected function _setTitle($title){
+//        return Text::slug($title);
+//    }
+
+    // Creating Virtual Fields
+    protected function _getFullName(){
+        return $this->firstname.' '.$this->lastname;
+    }
+}

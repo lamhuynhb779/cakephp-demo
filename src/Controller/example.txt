@@ -1,0 +1,67 @@
+<?php
+
+
+namespace App\Controller;
+
+
+use App\Model\Entity\Customer;
+use Cake\ORM\Query;
+use Cake\ORM\TableRegistry;
+
+use DateTime;
+
+class CustomersController extends AppController
+{
+    public function view(){
+        // Set the layout.
+        $this->viewBuilder()->setLayout('view');
+        // Before 3.4
+//        $this->viewBuilder()->layout('admin');
+        // Before 3.1
+//        $this->layout = 'admin';
+    }
+
+    public function showAll(){
+        $table = $this->loadModel();
+//        $tableAlias = $table->getAlias();
+        $entities = $table->find('all')->contain(['Accounts']);
+//        sql($table->find('all')->contain(['Accounts']));
+        $this->set('datas', $entities);
+//        $customer = TableRegistry::getTableLocator()->get('Customers');
+//        dump($customer);
+//        // Entities are created for you each time you use find() on a table object.
+//        $query = $customer->find();
+//
+//        foreach ($query as $row){
+//            dump($row->lastname);
+//        }
+
+//        $customerEntity = new Customers([
+//            'license' => '186500756',
+//            'firstname' => 'John',
+//            'lastname' => 'Mirco',
+//            'birthday' => new DateTime('now'),
+//            'sex' => 1,
+//            'career' => 'Teacher'
+//        ]);
+
+//        $customerEntity = TableRegistry::getTableLocator()->get('Customers')->newEntity([
+//            'license' => '186500756',
+//            'firstname' => 'New Article',
+//            'lastname' => 'New Article',
+//            'birthday' => new DateTime('now'),
+//            'sex' => 1,
+//            'career' => 'Teacher'
+//        ]);
+
+//        $a = new Customers;
+//        $a->title = 'This is my first post';
+//        dump($a->title);
+//
+//        $a->set('title', 'This is my first post 1');
+//        dump($a->get('title'));
+//
+//        dump($customerEntity->get('full_name'));
+
+    }
+}

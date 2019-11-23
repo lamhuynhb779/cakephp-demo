@@ -1,0 +1,39 @@
+table.customers{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+table tr.title-table{
+  background: #0078a0;
+  text-align: center;
+  color: white;
+}
+
+table tr td{
+  border: 1px solid black;
+  text-align: center;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button-red {
+  background-color: lightcoral;
+  color: black;
+  border: 2px solid #f44336;
+}
+
+.button-red:hover {
+  background-color: #d33d44;
+  color: white;
+}
