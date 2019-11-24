@@ -1,5 +1,5 @@
 <center>WEATHER FORECAST</center>
-<?php echo $this->Form->create(null, ['formnovalidate' => true, 'url'=>'/weather']); ?>
+<?php echo $this->Form->create(null, ['formnovalidate' => true, 'url'=>'/weather', 'type'=>'get']); ?>
 <form>
     <table>
         <tr>
@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td>Date:</td>
-            <td><?php echo $this->Form->text('date',['type'=>'date']); ?></td>
+            <td><?php //echo $this->Form->text('date',['type'=>'date']); ?></td>
         </tr>
         <tr>
             <td><center><?php echo $this->Form->button('GET',['id'=>'get-method']) ?></center></td>

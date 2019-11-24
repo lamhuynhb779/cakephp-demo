@@ -6,7 +6,7 @@ use Cake\Controller\Component;
 
 class InteractEAPIComponent extends Component{
 
-    public function callAPI($method, $url, $data){
+    public function callAPI($method, $url, $data, $headers = false){
         $cURL = curl_init();
         
         switch($method){
@@ -27,10 +27,19 @@ class InteractEAPIComponent extends Component{
 
         //OPTIONS:
         curl_setopt($cURL, CURLOPT_URL, $url);
-        curl_setopt($cURL, CURLOPT_HTTPHEADER, array(
-            'APIKEY: 1111111111111111',
-            'Content-Type: application/json',
-        ));
+
+        if(!$headers){
+            curl_setopt($cURL, CURLOPT_HTTPHEADER, array(
+                'APIKEY: 111111111111111111111',
+                'Content-Type: application/json',
+            ));
+        }else{
+            curl_setopt($cURL, CURLOPT_HTTPHEADER, array(
+                'APIKEY: 111111111111111111111',
+                'Content-Type: application/json',
+                $headers
+            ));
+        }
 
         curl_setopt($cURL, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($cURL, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

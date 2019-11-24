@@ -74,6 +74,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/customer/new', ['controller'=>'customers', 'action'=>'createNew']);
 
     $routes->connect('/weather', ['controller'=>'Weather', 'action'=>'view']);
+
+    $routes->connect('/weather/post', ['controller'=>'weather', 'action'=>'postResponse']);
     
     Router::scope('/', function ($routes) {
         $routes->setExtensions(['json', 'xml']);
